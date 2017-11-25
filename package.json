@@ -1,0 +1,35 @@
+{
+    "name": "unosocket",
+    "version": "1.0.0",
+    "description": "simple uno serial port demo",
+    "main": "app.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "start": "echo node app.js"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/amitchanchal/unosocket.git"
+    },
+    "keywords": [
+        "arduino",
+        "uno",
+        "serialport",
+        "socketio",
+        "expressjs",
+        "amit",
+        "chanchal"
+    ],
+    "author": "amit chanchal",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/amitchanchal/unosocket/issues"
+    },
+    "homepage": "https://github.com/amitchanchal/unosocket#readme",
+    "dependencies": {
+        "express": "^4.16.2",
+        "jquery": "^3.2.1",
+        "serialport": "^6.0.4",
+        "socket.io": "^2.0.4"
+    }
+}
