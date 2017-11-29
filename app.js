@@ -20,6 +20,7 @@ serialport.on('open', function() {
     io.on('connection', function(socket) {
         serialport.on('data', function(data) {
             socket.emit("status", data[0]);
+            console.log(data[0]);
         });
     });
 

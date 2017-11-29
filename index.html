@@ -4,9 +4,16 @@
     <title>Socket.IO chat</title>
   </head>
   <body>
-    <ul id="messages"></ul>
+    <div>This is my state</div>
+    <canvas height="600"
+            id="myCanvas"
+            style="border:1px solid #000000;"
+            width="600"></canvas>
     <script src="/socket.io/socket.io.js"></script>
     <script src="https://code.jquery.com/jquery-1.11.1.js"></script>
-    <script>$(function() { var socket = io(); var color = '#FB8C00'; socket.on('status', function(dist) { console.log(dist); $('body').css("background", color); }); });</script>
+    <script>$(function() { var socket = io(); /*Setting up the canvas*/ var mainCanvas = document.getElementById("myCanvas"); var mainContext = mainCanvas.getContext('2d'); var canvasWidth = mainCanvas.width; var canvasHeight = mainCanvas.height;
+    /*Function to draw circle*/ function drawCircle(radius) { mainContext.clearRect(0, 0, canvasWidth, canvasHeight); /*color in the background*/ mainContext.fillStyle = "#EEEEEE"; mainContext.fillRect(0, 0, canvasWidth, canvasHeight); /* draw the
+    circle*/ mainContext.beginPath(); mainContext.arc(225, 225, radius, 0, Math.PI * 2, false); mainContext.closePath(); /* color in the circle*/ mainContext.fillStyle = "#006699"; mainContext.fill(); } socket.on('status', function(dist) {
+    $('div').css("background-color", dist); drawCircle(dist); console.log(dist); }); });</script>
   </body>
 </html>
